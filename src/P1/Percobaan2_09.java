@@ -13,7 +13,13 @@ public class Percobaan2_09 {
         n = (n < 10) ? n + 10 : n;
         System.out.println("n: " + n);
         for (int i = 1; i <= n; i++) {
-            System.out.print((i % 2 == 1) ? "*" : i);
+            if (i != 6 && i != 10) {
+                if (i % 2 == 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(i);
+                }
+            }
         }
     }
 }
