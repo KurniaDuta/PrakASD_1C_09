@@ -9,13 +9,16 @@ public class buku09 {
         System.out.println("Pengarang: " + pengarang);
         System.out.println("Jumlah Halaman: " + halaman);
         System.out.println("Stok: " + stok);
+        if (stok == 0) {
+            System.out.println("Stock Kurang!");
+        }
         System.out.println("Harga: " + harga);
     }
 
     void terjual(int jml) {
         if (stok > 0) {
            stok -= jml; 
-        }
+        } 
     }
 
     void restock(int jml) {
