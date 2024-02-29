@@ -27,5 +27,8 @@ public class bukuMain09 {
         buku09 bk2 = new buku09("Self Reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
         bk2.tampilInformasi();
+
+        buku09 bkDuta = new buku09("How to Cook Egg", "Duta Kurnia Ardhani", 200, 40, 80000);
+        bkDuta.tampilInformasi();
     }
 }

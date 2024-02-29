@@ -4,6 +4,10 @@ public class buku09 {
     String judul, pengarang;
     int halaman, stok, harga;
 
+    public buku09() {
+        
+    }
+
     public buku09(String jud, String pg, int hal, int stok, int har) {
         judul = jud;
         pengarang = pg;
