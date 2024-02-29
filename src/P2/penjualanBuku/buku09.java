@@ -12,7 +12,7 @@ public class buku09 {
         if (stok == 0) {
             System.out.println("Stock Kurang!");
         }
-        System.out.println("Harga: " + harga);
+        System.out.println("Harga: Rp " + harga);
     }
 
     void terjual(int jml) {
@@ -29,5 +29,16 @@ public class buku09 {
         harga = hrg;
     }
 
+    public buku09() {
+        
+    }
+
+    public buku09(String jud, String pg, int hal, int stok, int har) {
+        judul = jud;
+        pengarang = pg;
+        halaman = hal;
+        this.stok = stok;
+        harga = har;
+    }
     
 }
