@@ -14,21 +14,20 @@ public class bukuMain09 {
         bk1.gantiHarga(60000);
         bk1.tampilInformasi();
 
-        // buku09 bk2 = new buku09();
-        // bk2.judul = "How to Train Your Dragons";
-        // bk2.pengarang = "Cressida Cowell";
-        // bk2.halaman = 432;
-        // bk2.stok = 0;
-        // bk2.harga = 275000;
-
-        // bk2.terjual(4);
-        // bk2.tampilInformasi();
-
+        System.out.println();
         buku09 bk2 = new buku09("Self Reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
         bk2.tampilInformasi();
 
+        System.out.println();
         buku09 bkDuta = new buku09("How to Cook Egg", "Duta Kurnia Ardhani", 200, 40, 80000);
         bkDuta.tampilInformasi();
+
+        System.out.println("\nTotal bayar");
+        bkDuta.terjual(3);
+        bkDuta.tampilInformasi();
+        System.out.println("Harga Total Buku: "+ bkDuta.hitungHargaTotal(3));
+        System.out.println("Diskon: "+ bkDuta.hitungDiskon(bkDuta.hitungHargaTotal(3)));
+        System.out.println("Total Bayar: " + bkDuta.hitungHargaBayar(bkDuta.hitungHargaTotal(3), bkDuta.hitungDiskon(bkDuta.hitungHargaTotal(3))));
     }
 }

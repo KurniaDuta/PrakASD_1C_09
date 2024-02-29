@@ -25,12 +25,13 @@ public class buku09 {
             System.out.println("Stock Kurang!");
         }
         System.out.println("Harga: Rp " + harga);
+
     }
 
     void terjual(int jml) {
         if (stok > 0) {
            stok -= jml; 
-        } 
+        }
     }
 
     void restock(int jml) {
@@ -41,5 +42,21 @@ public class buku09 {
         harga = hrg;
     }
 
-    
+    int hitungHargaTotal (int jml) {
+        return harga * jml;
+    }
+
+    double hitungDiskon (int hrg) {
+        if (hrg > 150000) {
+            return 0.12;
+        } else if (hrg >= 75000 && hrg <= 150000) {
+            return 0.05;
+        } else {
+            return 0;
+        }
+    }
+
+    int hitungHargaBayar(int hrg, double diskon) {
+        return (int) (hrg - (hrg * diskon));
+    }
 }
