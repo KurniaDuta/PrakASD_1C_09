@@ -14,5 +14,14 @@ public class mahasiswaMain09 {
             System.out.println("\nData Mahasiswa ke-" + (i+1));
             daftarMahasiswa[i].tampilInfo();
         }
+        
+        mahasiswa09 mahasiswa09 = new mahasiswa09("", "", ' ', 0.0);
+
+        System.out.println("\n==========================");
+        System.out.println("Rata-rata IPK Mahasiswa: " + mahasiswa09.rerataIPK(daftarMahasiswa) );
+
+        mahasiswa09 ipkTertinggi = mahasiswa09.ipkTerbesar(daftarMahasiswa);
+        System.out.println("\nMahasiswa dengan IPK Terbesar: ");
+        ipkTertinggi.tampilInfo();
     }
 }

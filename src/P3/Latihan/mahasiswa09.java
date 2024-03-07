@@ -19,10 +19,10 @@ public class mahasiswa09 {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Masukkan Nama: ");
-        this.nama = input.next();
+        this.nama = input.nextLine();
 
         System.out.print("Masukkan NIM: ");
-        this.nim = input.next();
+        this.nim = input.nextLine();
 
         System.out.print("Masukkan Jenis Kelamin (L/P): ");
         this.jenisKelamin = input.next().charAt(0);
@@ -36,5 +36,25 @@ public class mahasiswa09 {
         System.out.println("NIM: " + this.nim);
         System.out.println("Jenis Kelamin: " + this.jenisKelamin);
         System.out.println("Nilai IPK: " + this.ipk);
+    }
+
+    public double rerataIPK(mahasiswa09[] mahasiswas){
+        double totalIPK = 0;
+
+        for (int i = 0; i < mahasiswas.length; i++) {
+            totalIPK += mahasiswas[i].ipk;
+        }
+        return totalIPK / mahasiswas.length;
+    }
+
+    public mahasiswa09 ipkTerbesar(mahasiswa09[] mahasiswas) {
+        mahasiswa09 mahasiswaTerbesar = mahasiswas[0];
+
+        for (int i = 0; i < mahasiswas.length; i++) {
+            if (mahasiswas[i].ipk > mahasiswaTerbesar.ipk) {
+                mahasiswaTerbesar = mahasiswas[i];
+            }
+        }
+        return mahasiswaTerbesar;
     }
 }
