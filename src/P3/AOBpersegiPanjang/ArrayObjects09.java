@@ -1,23 +1,25 @@
 package P3.AOBpersegiPanjang;
 
+import java.util.Scanner;
+
 public class ArrayObjects09 {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
         PersegiPanjang09[] ppArray = new PersegiPanjang09[3];
 
-        ppArray[0] = new PersegiPanjang09();
-        ppArray[0].panjang = 110;
-        ppArray[0].lebar = 30;
+        for (int i = 0; i < ppArray.length; i++) {
+            ppArray[i] = new PersegiPanjang09();
+            System.out.println("Persegi panjang ke-" + i);
+            System.out.print("Masukkan panjang: ");
+            ppArray[i].panjang = input.nextInt();
+            System.out.print("Masukkan lebar: ");
+            ppArray[i].lebar = input.nextInt();
+        }
 
-        ppArray[1] = new PersegiPanjang09();
-        ppArray[1].panjang = 80;
-        ppArray[1].lebar = 40;
-
-        ppArray[2] = new PersegiPanjang09();
-        ppArray[2].panjang = 100;
-        ppArray[2].lebar = 20;
-
-        System.out.println("Persegi Panjang ke-0: " + ppArray[0].panjang + ", lebar: " + ppArray[0].lebar);
-        System.out.println("Persegi Panjang ke-1: " + ppArray[1].panjang + ", lebar: " + ppArray[1].lebar);
-        System.out.println("Persegi Panjang ke-2: " + ppArray[2].panjang + ", lebar: " + ppArray[2].lebar);
+        for (int i = 0; i < ppArray.length; i++) {
+            System.out.println("Persegi Panjang ke-" + i);
+            System.out.println("Panjang: " + ppArray[i].panjang + ", Lebar: " + ppArray[i].lebar);
+        }
     }
 }
