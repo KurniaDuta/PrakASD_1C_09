@@ -20,6 +20,7 @@ public class ArrayObjects09 {
         for (int i = 0; i < ppArray.length; i++) {
             System.out.println("Persegi Panjang ke-" + i);
             System.out.println("Panjang: " + ppArray[i].panjang + ", Lebar: " + ppArray[i].lebar);
+            
         }
     }
 }
