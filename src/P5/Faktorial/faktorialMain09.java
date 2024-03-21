@@ -20,13 +20,15 @@ public class faktorialMain09 {
         System.out.println("\nHASIL - BRUTE FORCE");
         for (int i = 0; i < iJml; i++) {
             System.out.println(
-                    "Hasil penghitungan faktorial menggunakan Brute Force adalah " + fk[i].faktorialBF(fk[i].nilai));
+                    "Hasil penghitungan faktorial menggunakan Brute Force adalah " 
+                    + fk[i].faktorialBF(fk[i].nilai));
         }
 
         System.out.println("\nHASIL - DIVIDE AND CONQUER");
         for (int i = 0; i < iJml; i++) {
             System.out.println(
-                    "Hasil penghitungan faktorial menggunakan Divide and Conquer adalah " + fk[i].faktorialDC(fk[i].nilai));
+                    "Hasil penghitungan faktorial menggunakan Divide and Conquer adalah " 
+                    + fk[i].faktorialDC(fk[i].nilai));
         }
     }
 }
