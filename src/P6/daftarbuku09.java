@@ -30,4 +30,18 @@ public class daftarbuku09 {
             }
         }
     }
+
+    void selectionSort(){
+        for (int i = 0; i < listBK.length - 1; i++) {
+            int idxMax = i;
+            for (int j = i + 1; j < listBK.length; j++) {
+                if (listBK[j].stock > listBK[idxMax].stock) {
+                    idxMax = j;
+                }
+            }
+            buku09 tempBuku = listBK[idxMax];
+            listBK[idxMax] = listBK[i];
+            listBK[i] = tempBuku;
+        }
+    }
 }
