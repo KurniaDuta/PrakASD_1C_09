@@ -57,4 +57,15 @@ public class daftarbuku09 {
         }
     }
 
+    void insertionDesc() {
+        for (int i = 1; i < listBK.length; i++) {
+            buku09 temp = listBK[i];
+            int j = i;
+            while (j > 0 && listBK[j - 1].stock < temp.stock) {
+                listBK[j] = listBK[j - 1];
+                j--;
+            }
+            listBK[j] = temp;
+        }
+    }
 }

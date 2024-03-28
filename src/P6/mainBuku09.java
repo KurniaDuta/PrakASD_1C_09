@@ -34,5 +34,10 @@ public class mainBuku09 {
         System.out.println("Data setelah diurutkan secara Asc berdasarkan stock menggunakan insterion sort");
         listBuku.insertionSort();
         listBuku.tampil();
+
+        System.out.println("\n===========================");
+        System.out.println("Data setelah diurutkan secara Desc berdasarkan stock menggunakan insterion sort");
+        listBuku.insertionDesc();
+        listBuku.tampil();
     }
 }
