@@ -14,7 +14,7 @@ public class daftarbuku09 {
     }
 
     void tampil() {
-        for(buku09 m : listBK){
+        for (buku09 m : listBK) {
             m.tampilDataBuku();
         }
     }
@@ -22,16 +22,16 @@ public class daftarbuku09 {
     void bubbleSort() {
         for (int i = 0; i < listBK.length - 1; i++) {
             for (int j = 0; j < listBK.length - i - 1; j++) {
-                if (listBK[j].stock > listBK[j+1].stock) {
+                if (listBK[j].stock > listBK[j + 1].stock) {
                     buku09 tempBK = listBK[j];
-                    listBK[j] = listBK[j+1];
-                    listBK[j+1] = tempBK;
+                    listBK[j] = listBK[j + 1];
+                    listBK[j + 1] = tempBK;
                 }
             }
         }
     }
 
-    void selectionSort(){
+    void selectionSort() {
         for (int i = 0; i < listBK.length - 1; i++) {
             int idxMax = i;
             for (int j = i + 1; j < listBK.length; j++) {
@@ -44,4 +44,17 @@ public class daftarbuku09 {
             listBK[i] = tempBuku;
         }
     }
+
+    void insertionSort() {
+        for (int i = 1; i < listBK.length; i++) {
+            buku09 temp = listBK[i];
+            int j = i;
+            while (j > 0 && listBK[j - 1].stock > temp.stock) {
+                listBK[j] = listBK[j - 1];
+                j--;
+            }
+            listBK[j] = temp;
+        }
+    }
+
 }
