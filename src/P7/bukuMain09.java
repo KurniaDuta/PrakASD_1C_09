@@ -11,11 +11,11 @@ public class bukuMain09 {
         System.out.println("----------------------------------------------------------------------------");
         System.out.println("\t\t\tPROGRAM PENCARIAN BUKU");
 
-        buku09 buku = new buku09(111, "Algoritma", 2019, "Wahyuni", 5);
-        buku09 buku1 = new buku09(123, "Big Data", 2020, "Susilo", 3);
-        buku09 buku2 = new buku09(125, "Desain UI", 2021, "Supriadi", 3);
-        buku09 buku3 = new buku09(126, "Web Programming", 2022, "Pustaka Adi", 2);
-        buku09 buku4 = new buku09(127, "Etika Mahasiswa", 2023, "Darmawan Adi", 2);
+        buku09 buku = new buku09(20215, "Algoritma", 2019, "Wahyuni", 5);
+        buku09 buku1 = new buku09(20214, "Big Data", 2020, "Susilo", 3);
+        buku09 buku2 = new buku09(20212, "Desain UI", 2021, "Supriadi", 3);
+        buku09 buku3 = new buku09(20211, "Web Programming", 2022, "Pustaka Adi", 2);
+        buku09 buku4 = new buku09(20210, "Etika Mahasiswa", 2023, "Darmawan Adi", 2);
 
         data.tambah(buku);
         data.tambah(buku1);
