@@ -36,7 +36,8 @@ public class pencarianBuku09 {
         }
     }
 
-    public static void formatTabel(){
+    public static void formatTabel() {
+        System.out.println("----------------------------------------------------------------------------");
         System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", "Kode Buku", "JudulBuku", "Tahun Terbit",
                 "Pengarang", "Stock");
         System.out.println("----------------------------------------------------------------------------");
@@ -45,7 +46,8 @@ public class pencarianBuku09 {
     public void tampilData(int x, int pos) {
         if (pos != -1) {
             pencarianBuku09.formatTabel();
-            System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", x, listBK[pos].judulBuku, listBK[pos].tahunTerbit,
+            System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", x, listBK[pos].judulBuku,
+                    listBK[pos].tahunTerbit,
                     listBK[pos].pengarang, listBK[pos].stock);
 
         } else {
@@ -60,6 +62,22 @@ public class pencarianBuku09 {
             }
         }
         return null;
+    }
+
+    public int findBinarySearch(int cari, int left, int right) {
+        int mid;
+
+        if (left <= right) {
+            mid = (left + right) / 2;
+            if (cari == listBK[mid].kodeBuku) {
+                return mid;
+            } else if (cari > listBK[mid].kodeBuku) {
+                return findBinarySearch(cari, mid + 1, right);
+            } else {
+                return findBinarySearch(cari, left, mid - 1);
+            }
+        }
+        return -1;
     }
 
 }

@@ -23,7 +23,6 @@ public class bukuMain09 {
         data.tambah(buku3);
         data.tambah(buku4);
 
-        System.out.println("----------------------------------------------------------------------------");
         pencarianBuku09.formatTabel();
         data.tampil();
 
@@ -36,15 +35,20 @@ public class bukuMain09 {
         data.tampilPosisi(kodeCari, posisi);
         data.tampilData(kodeCari, posisi);
 
-        System.out.println("\nMethod buku09");
-        buku09 dataBuku = data.findBUku(kodeCari);
-        if (dataBuku != null) {
-            pencarianBuku09.formatTabel();
-            dataBuku.tampilDataBuku();
-        } else {
-            System.out.println("Data: " + kodeCari + " Tidak Ditemukan");
-        }
+        // System.out.println("\nMethod buku09");
+        // buku09 dataBuku = data.findBUku(kodeCari);
+        // if (dataBuku != null) {
+        //     pencarianBuku09.formatTabel();
+        //     dataBuku.tampilDataBuku();
+        // } else {
+        //     System.out.println("Data: " + kodeCari + " Tidak Ditemukan");
+        // }
 
+
+        System.out.println("\nDengan Binary Search");
+        posisi = data.findBinarySearch(kodeCari, 0, data.idx - 1);
+        data.tampilPosisi(kodeCari, posisi);
+        data.tampilData(kodeCari, posisi);
         s1.close();
     }
 }
