@@ -36,12 +36,15 @@ public class pencarianBuku09 {
         }
     }
 
+    public static void formatTabel(){
+        System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", "Kode Buku", "JudulBuku", "Tahun Terbit",
+                "Pengarang", "Stock");
+        System.out.println("----------------------------------------------------------------------------");
+    }
+
     public void tampilData(int x, int pos) {
         if (pos != -1) {
-            System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", "kodeBuku", "judulBuku", "tahunTerbit",
-                    "pengarang", "stock");
-            System.out.println(
-                    "-----------------------------------------------------------------------------------");
+            pencarianBuku09.formatTabel();
             System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", x, listBK[pos].judulBuku, listBK[pos].tahunTerbit,
                     listBK[pos].pengarang, listBK[pos].stock);
 
@@ -49,4 +52,14 @@ public class pencarianBuku09 {
             System.out.println("Data: " + x + " Tidak ditemukan");
         }
     }
+
+    public buku09 findBUku(int cari) {
+        for (int i = 0; i < listBK.length; i++) {
+            if (listBK[i].kodeBuku == cari) {
+                return listBK[i];
+            }
+        }
+        return null;
+    }
+
 }
