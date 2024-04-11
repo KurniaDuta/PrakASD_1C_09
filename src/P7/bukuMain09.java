@@ -11,11 +11,11 @@ public class bukuMain09 {
         System.out.println("----------------------------------------------------------------------------");
         System.out.println("\t\t\tPROGRAM PENCARIAN BUKU");
 
-        buku09 buku = new buku09(20215, "Algoritma", 2019, "Wahyuni", 5);
-        buku09 buku1 = new buku09(20214, "Big Data", 2020, "Susilo", 3);
-        buku09 buku2 = new buku09(20212, "Desain UI", 2021, "Supriadi", 3);
-        buku09 buku3 = new buku09(20211, "Web Programming", 2022, "Pustaka Adi", 2);
-        buku09 buku4 = new buku09(20210, "Etika Mahasiswa", 2023, "Darmawan Adi", 2);
+        buku09 buku = new buku09("20210", "Algoritma", 2019, "Wahyuni", 5);
+        buku09 buku1 = new buku09("20211", "Big Data", 2020, "Susilo", 3);
+        buku09 buku2 = new buku09("20212", "Desain UI", 2021, "Supriadi", 3);
+        buku09 buku3 = new buku09("20214", "Web Programming", 2022, "Pustaka Adi", 2);
+        buku09 buku4 = new buku09("20215", "Etika Mahasiswa", 2023, "Darmawan Adi", 2);
 
         data.tambah(buku);
         data.tambah(buku1);
@@ -29,13 +29,18 @@ public class bukuMain09 {
         System.out.println("----------------------------------------------------------------------------");
         System.out.println("Masukkan kode buku yang ingin dicari: ");
         System.out.print("Kode Buku: ");
-        int kodeCari = s1.nextInt();
+        String kodeCari = s1.next();
         System.out.println("Dengan Sequential Search");
         int posisi = data.FindSeqSearch(kodeCari);
         data.tampilPosisi(kodeCari, posisi);
         data.tampilData(kodeCari, posisi);
+        
+        System.out.println("\nDengan Binary Search");
+        posisi = data.findBinarySearch(kodeCari, 0, data.idx - 1);
+        data.tampilPosisi(kodeCari, posisi);
+        data.tampilData(kodeCari, posisi);
 
-        // System.out.println("\nMethod buku09");
+        // System.out.println("\nMethod findBuku");
         // buku09 dataBuku = data.findBUku(kodeCari);
         // if (dataBuku != null) {
         //     pencarianBuku09.formatTabel();
@@ -45,10 +50,6 @@ public class bukuMain09 {
         // }
 
 
-        System.out.println("\nDengan Binary Search");
-        posisi = data.findBinarySearch(kodeCari, 0, data.idx - 1);
-        data.tampilPosisi(kodeCari, posisi);
-        data.tampilData(kodeCari, posisi);
         s1.close();
     }
 }
