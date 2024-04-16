@@ -1,7 +1,7 @@
 package P7;
 
 public class pencarianBuku09 {
-    buku09 listBK[] = new buku09[5];
+    buku09 listBK[] = new buku09[6];
     int idx;
 
     void tambah(buku09 bk) {
@@ -30,7 +30,9 @@ public class pencarianBuku09 {
 
     public void tampilPosisi(String x, int pos) {
         if (pos != -1) {
-            System.out.println("Data: " + x + " ditemukan pada posisi ke-" + pos);
+            if (deteksiJudul(x) == 1) {
+                System.out.println("Data: " + x + " ditemukan pada posisi ke-" + pos);
+            }
         } else {
             System.out.println("Data: " + x + " Tidak ditemukan");
         }
@@ -42,7 +44,19 @@ public class pencarianBuku09 {
             System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", x, listBK[pos].judulBuku,
                     listBK[pos].tahunTerbit,
                     listBK[pos].pengarang, listBK[pos].stock);
+        } else {
+            System.out.println("Data: " + x + " Tidak ditemukan");
+        }
+    }
 
+    public void tampilDataJudul(String x, int pos) {
+        if (pos != -1) {
+            if (deteksiJudul(x) == 1) {
+                pencarianBuku09.formatTabel();
+                System.out.printf("%-9s | %-16s | %-16s | %-16s | %-6s%n", listBK[pos].kodeBuku, x,
+                        listBK[pos].tahunTerbit,
+                        listBK[pos].pengarang, listBK[pos].stock);
+            }
         } else {
             System.out.println("Data: " + x + " Tidak ditemukan");
         }
@@ -80,6 +94,54 @@ public class pencarianBuku09 {
     // }
     // return null;
     // }
-    
-    
+
+    public int judulBukuSeq(String cari) {
+        for (int i = 0; i < listBK.length; i++) {
+            if (listBK[i].judulBuku.equalsIgnoreCase(cari)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void sorting() {
+        for (int i = 0; i < listBK.length - 1; i++) {
+            for (int j = i + 1; j < listBK.length; j++) {
+                if (listBK[i].judulBuku.compareTo(listBK[j].judulBuku) > 0) {
+                    buku09 tempBK = listBK[i];
+                    listBK[i] = listBK[j];
+                    listBK[j] = tempBK;
+                }
+            }
+        }
+    }
+
+    public int judulBinary(String cari, int left, int right) {
+        sorting();
+        if (left <= right) {
+            int mid = (left + right) / 2;
+            int hasil = listBK[mid].judulBuku.compareToIgnoreCase(cari);
+            if (hasil == 0) {
+                return mid;
+            } else if (hasil < 0) {
+                return judulBinary(cari, mid + 1, right);
+            } else {
+                return judulBinary(cari, left, mid - 1);
+            }
+        }
+        return -1;
+    }
+
+    public int deteksiJudul(String judul) {
+        int count = 0;
+        for (buku09 buku : listBK) {
+            if (buku.judulBuku.equalsIgnoreCase(judul) && buku != null) {
+                count++;
+            }
+        }
+        if (count > 1) {
+            System.out.println("Peringatan! Judul Buku Ditemukan Lebih Dari 1");
+        }
+        return count;
+    }
 }
