@@ -11,7 +11,8 @@ public class utama09 {
         gudang09 gudang = new gudang09(kapasitas);
 
         while (true) {
-            System.out.println("\nMenu:\n1. Tambah Barang\n2. Ambil Barang\n3. Tampilkan tumpukan barang\n4. Lihat barang teratas\n5. Keluar");
+            System.out.println(
+                    "\nMenu:\n1. Tambah Barang\n2. Ambil Barang\n3. Tampilkan tumpukan barang\n4. Lihat barang teratas\n5. Lihat barang terbawah\n6. Cari Kode Barang\n7. Keluar");
             System.out.print("--> ");
             int pilihan = input.nextInt();
             input.nextLine();
@@ -38,8 +39,16 @@ public class utama09 {
                     gudang.lihatBarangTeratas();
                     break;
                 case 5:
-                    System.exit(0);
+                    gudang.lihatBarangTerbawah();
                     break;
+                case 6:
+                    System.out.print("Masukkan kode barang: ");
+                    int kodeCari = input.nextInt();
+                    input.nextLine();
+                    gudang.cariBarang(kodeCari);
+                    break;
+                case 7:
+                    System.exit(0);
                 default:
                     System.out.println("Inputan tidak valid");
                     break;
