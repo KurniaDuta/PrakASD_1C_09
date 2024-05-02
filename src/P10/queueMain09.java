@@ -3,7 +3,6 @@ package P10;
 import java.util.Scanner;
 
 public class queueMain09 {
-
     public static void menu(){
         System.out.println("Masukkan operasi yang diinginkan");
         System.out.println("1. Enqueue");
