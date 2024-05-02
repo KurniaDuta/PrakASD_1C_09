@@ -9,6 +9,7 @@ public class queueMainNasabah09 {
         System.out.println("2. Antrian keluar");
         System.out.println("3. Cek antrian terdepan");
         System.out.println("4. Cek semua antrian");
+        System.out.println("5. Cek antrian terbelakang");
         System.out.println("-----------------------------");
     }
 
@@ -54,10 +55,13 @@ public class queueMainNasabah09 {
                 case 4:
                     antri.print();
                     break;
+                case 5:
+                    antri.peekRear();
+                    break;
                 default:
                     System.out.println("Pilihan tidak tersedia");
                     break;
             }
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4);
+        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
     }
 }
