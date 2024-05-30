@@ -73,6 +73,8 @@ public class mainFilm09 {
                     System.out.println("Masukkan Index Data yang Ingin Dihapus");
                     int indexRemove = input09.nextInt();
                     film.remove(indexRemove);
+                    System.out.println("Data Index " + indexRemove + " Telah Terhapus");
+                    break;
                 case 7:
                     film.print();
                     break;
