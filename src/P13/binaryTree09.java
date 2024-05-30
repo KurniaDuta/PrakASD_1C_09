@@ -39,21 +39,21 @@ public class binaryTree09 {
         }
     }
 
-boolean find(int data) {
-    boolean result = false;
-    node09 current = root;
-    while (current != null) {
-        if (current.data == data) {
-            result = true;
-            break;
-        } else if (data < current.data) {
-            current = current.left;
-        } else {
-            current = current.right;
+    boolean find(int data) {
+        boolean result = false;
+        node09 current = root;
+        while (current != null) {
+            if (current.data == data) {
+                result = true;
+                break;
+            } else if (data < current.data) { // Corrected this line
+                current = current.left;
+            } else {
+                current = current.right;
+            }
         }
+        return result;
     }
-    return result;
-}
 
     void traversePreOrder(node09 node) {
         if (node != null) {
