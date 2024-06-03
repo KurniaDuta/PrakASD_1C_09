@@ -168,4 +168,19 @@ public class binaryTree09 {
             }
         }
     }
+
+    // tugas 1
+    node09 addRecursive(node09 current, int data) {
+        if (current == null) {
+            return new node09(data);
+        }
+
+        if (data < current.data) {
+            current.left = addRecursive(current.left, data);
+        } else if (data > current.data) {
+            current.right = addRecursive(current.right, data);
+        }
+
+        return current;
+    }
 }
