@@ -7,8 +7,14 @@ public class binaryTreeArrayMain09 {
         int idxLast = 6;
 
         bta.populateData(data, idxLast);
+        bta.add(2);
         System.out.print("InOrder Traversal: ");
         bta.traverseInOrder(0);
         System.out.println("");
+        System.out.print("PreOrder Traversal: ");
+        bta.traversePreOrder(0);
+        System.out.println("");
+        System.out.print("PostOrder Traversal: ");
+        bta.traversePostOrder(0);
     }
 }
