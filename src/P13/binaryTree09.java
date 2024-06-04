@@ -184,7 +184,6 @@ public class binaryTree09 {
         return current;
     }
 
-
     // tugas 2
     void displayMinMax() {
         if (isEmpty()) {
@@ -204,5 +203,18 @@ public class binaryTree09 {
         }
         System.out.println("Nilai Terkecil: " + min);
         System.out.println("Nilai terbesar: " + max);
+    }
+
+    void leaf(node09 current) {
+        if (current == null) {
+            return;
+        }
+
+        if (current.left == null && current.right == null) {
+            System.out.println(current.data + " ");
+        }
+
+        leaf(current.left);
+        leaf(current.right);
     }
 }

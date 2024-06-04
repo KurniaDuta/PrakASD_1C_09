@@ -38,5 +38,7 @@ public class binaryTreeMain09 {
         System.out.println();
 
         bt.displayMinMax();
+        System.out.println("Data Leaf: ");
+        bt.leaf(bt.root);
     }
 }
