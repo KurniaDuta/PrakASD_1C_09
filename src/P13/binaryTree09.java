@@ -183,4 +183,26 @@ public class binaryTree09 {
 
         return current;
     }
+
+
+    // tugas 2
+    void displayMinMax() {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+            return;
+        }
+        node09 current = root;
+        int min = current.data;
+        int max = current.data;
+        while (current != null) {
+            if (current.data < min) {
+                min = current.data;
+            } else if (current.data > max) {
+                max = current.data;
+            }
+            current = current.right;
+        }
+        System.out.println("Nilai Terkecil: " + min);
+        System.out.println("Nilai terbesar: " + max);
+    }
 }

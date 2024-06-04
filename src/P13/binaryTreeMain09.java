@@ -36,5 +36,7 @@ public class binaryTreeMain09 {
         System.out.println("PreOrder Traversal: ");
         bt.traversePreOrder(bt.root);
         System.out.println();
+
+        bt.displayMinMax();
     }
 }
