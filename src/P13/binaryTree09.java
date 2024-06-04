@@ -211,10 +211,25 @@ public class binaryTree09 {
         }
 
         if (current.left == null && current.right == null) {
-            System.out.println(current.data + " ");
+            System.out.print(current.data + " ");
         }
 
         leaf(current.left);
         leaf(current.right);
+    }
+
+    int getLeafCount(node09 current) {
+        int count = 0;
+        if (current == null) {
+            return 0;
+        }
+
+        if (current.left == null && current.right == null) {
+            return 1;
+        }
+
+        count += getLeafCount(current.left);
+        count += getLeafCount(current.right);
+        return count;
     }
 }

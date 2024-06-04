@@ -40,5 +40,8 @@ public class binaryTreeMain09 {
         bt.displayMinMax();
         System.out.println("Data Leaf: ");
         bt.leaf(bt.root);
+        System.out.println();
+        
+        System.out.println("Jumlah Leaf: " + bt.getLeafCount(bt.root));
     }
 }
