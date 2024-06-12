@@ -62,4 +62,14 @@ public class graph09 {
         }
         System.out.println("");
     }
+
+    public void hasPath(int start, int end) throws Exception {
+        for (int i = 0; i < list[start].size(); i++) {
+            if (list[start].get(i) == end) {
+                System.out.println("Gedung " + (char) ('A' + start) + " dan " + (char) ('A' + end) + " bertetangga");
+                return;
+            }
+        }
+        System.out.println("Gedung " + (char) ('A' + start) + " dan " + (char) ('A' + end) + " tidak bertetangga");
+    }
 }
