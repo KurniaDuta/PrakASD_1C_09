@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class graphMain09 {
     public static void main(String[] args) throws Exception {
         Scanner input09 = new Scanner(System.in);
-        String menu[] = { "Add Edge", "Remove Edge", "Degree", "Print Graph", "Cek Edge", "Ubah Jarak", "Exit" };
+        String menu[] = { "Add Edge", "Remove Edge", "Degree", "Print Graph", "Cek Edge", "Ubah Jarak", "Jumlah Edge", "Exit" };
         int pilih;
 
         System.out.print("Masukkan Jumlah Vertex: ");
@@ -61,6 +61,9 @@ public class graphMain09 {
                     gedung.updateEdge(v1111, v2222, jarak2);
                     break;
                 case 7:
+                    gedung.hitungEdge();
+                    break;
+                case 8:
                     System.out.println("Terima Kasih");
                     System.exit(0);
                     break;
@@ -68,6 +71,6 @@ public class graphMain09 {
                     System.out.println("Invalid input");
                     break;
             }
-        } while (pilih != 0 || pilih >= 5);
+        } while (pilih != 0 && pilih <= 8);
     }
 }

@@ -90,4 +90,12 @@ public class graph09 {
                     + " tidak ditemukan.");
         }
     }
+
+    public void hitungEdge() throws Exception {
+        int total = 0;
+        for (int i = 0; i < vertex; i++) {
+            total += list[i].size();
+        }
+        System.out.println("Jumlah Edge: " + total);
+    }
 }
