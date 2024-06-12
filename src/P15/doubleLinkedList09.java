@@ -1,5 +1,7 @@
 package P15;
 
+import org.w3c.dom.Node;
+
 public class doubleLinkedList09 {
     node09 head;
     int size;
@@ -72,5 +74,18 @@ public class doubleLinkedList09 {
     public void clear() {
         head = null;
         size = 0;
+    }
+
+    public void updateJarak(int index, int jarakBaru) {
+        node09 current = head;
+        int count = 0;
+        while (current != null) {
+            if (count == index) {
+                current.jarak = jarakBaru;
+                return;
+            }
+            count++;
+            current = current.next;
+        }
     }
 }

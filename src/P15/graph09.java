@@ -72,4 +72,22 @@ public class graph09 {
         }
         System.out.println("Gedung " + (char) ('A' + start) + " dan " + (char) ('A' + end) + " tidak bertetangga");
     }
+
+    public void updateEdge(int asal, int tujuan, int jarakBaru) throws Exception {
+        boolean updated = false;
+        for (int i = 0; i < list[asal].size(); i++) {
+            if (list[asal].get(i) == tujuan) {
+                list[asal].updateJarak(i, jarakBaru);
+                updated = true;
+                break;
+            }
+        }
+        if (updated) {
+            System.out.println("Jarak dari Gedung " + (char) ('A' + asal) + " ke Gedung " + (char) ('A' + tujuan)
+                    + " telah diperbarui menjadi " + jarakBaru + " m.");
+        } else {
+            System.out.println("Edge dari Gedung " + (char) ('A' + asal) + " ke Gedung " + (char) ('A' + tujuan)
+                    + " tidak ditemukan.");
+        }
+    }
 }
